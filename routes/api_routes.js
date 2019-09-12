@@ -6,7 +6,7 @@
 // =============================================================
 var data = require("../models/index");
 
-// Routes
+// Routes 
 // =============================================================
 module.exports = (router) => {
 
@@ -20,6 +20,7 @@ module.exports = (router) => {
 	res.end();
 });
 
+// Login Auth
 router.post('/auth', (req, res) =>{
 	var username = req.body.username;
 	var password = req.body.password;
