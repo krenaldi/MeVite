@@ -5,13 +5,19 @@
 
 // Dependencies
 // =============================================================
-var mysql = require('mysql');
 var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
-var router = express.Router();
+// var router = express.Router();
 
+// Requiring passport as we've configured it
+// =============================================================
+var passport = require("./config/passport");
+
+//Import the models folder
+// =============================================================
+var db = require("./models");
 
 // Sets up the Express App
 // =============================================================
@@ -31,21 +37,30 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 // express-session
+// We need to use sessions to keep track of our user's login status
 //=============================================================
-app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
-}));
-app.use(bodyParser.urlencoded({extended : true}));
-app.use(bodyParser.json());
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// //we are doing a GET to test if our server is working fine
+// //=============================================================
+// app.get('/', function(req, res) {    
+// 	res.send('./public/home.html');
+// });
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 // Routes
+// Requiring our routes
 // =============================================================
-require("./routes/api_routes.js")(app);
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
-});
+// Syncing our database and logging a message to the user upon success
+db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
+      console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+    });
+  });
