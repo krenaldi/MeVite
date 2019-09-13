@@ -24,6 +24,9 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+// set view engine
+app.set('view engine', 'ejs');
+
 // Static directory to be served
 app.use(express.static('./public'));
 
