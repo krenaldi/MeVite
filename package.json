@@ -4,7 +4,8 @@
   "description": "An app that allows users to schedule and invite people to events",
   "main": "index.js",
   "scripts": {
-    "test": "node server.js"
+    "test": "node server.js",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,11 @@
   },
   "homepage": "https://github.com/krenaldi/MeVite#readme",
   "dependencies": {
+<<<<<<< HEAD
     "bcrypt": "^3.0.6",
+=======
+    "bcryptjs": "^2.4.3",
+>>>>>>> master
     "body-parser": "^1.19.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
@@ -28,10 +33,11 @@
     "nodemailer": "^6.3.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+<<<<<<< HEAD
+=======
+    "path": "^0.12.7",
+>>>>>>> master
     "sequelize": "^5.18.4",
     "sequelize-cli": "^5.5.1"
-  },
-  "devDependencies": {
-    "nodemon": "^1.19.2"
   }
 }

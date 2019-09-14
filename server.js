@@ -5,22 +5,35 @@
 
 // Dependencies
 // =============================================================
-var mysql = require('mysql');
 var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
+<<<<<<< HEAD
 var router = express.Router();
 // var env = require('dotenv').config({path: __dirname + '/.env'});
 var passport   = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+=======
+// var router = express.Router();
+>>>>>>> master
 
+// Requiring passport as we've configured it
+// =============================================================
+var passportSetup = require("./config/passport.js");
+
+//Import the models folder
+// =============================================================
+var db = require("./models");
 
 // Sets up the Express App
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 3000;
+
+// set view engine
+app.set('view engine', 'ejs');
 
 // Static directory to be served
 app.use(express.static('./public'));
@@ -73,14 +86,20 @@ passport.use(new LocalStrategy(function(username, password, done) {
 
 
 // express-session
+// We need to use sessions to keep track of our user's login status
 //=============================================================
-app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
-}));
-app.use(bodyParser.urlencoded({extended : true}));
-app.use(bodyParser.json());
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// //we are doing a GET to test if our server is working fine
+// //=============================================================
+// app.get('/', function(req, res) {    
+// 	res.send('./public/home.html');
+// });
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 //=============================================================
 app.get('/', function(req, res) {
@@ -98,7 +117,9 @@ var models = require("./models");
 require('./passport/passport.js')(passport, models.user);
 
 // Routes
+// Requiring our routes
 // =============================================================
+<<<<<<< HEAD
 require("./routes/api_routes.js")(app);
 var authRoute = require('./routes/auth.js')(app, passport);
 
@@ -109,9 +130,14 @@ models.sequelize.sync().then(function() {
 }).catch(function(err) {
     console.log(err, "Something went wrong with the Database Update!")
 });
+=======
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+>>>>>>> master
 
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
-});
+// Syncing our database and logging a message to the user upon success
+db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
+      console.log('Server listening on: http://localhost:' + PORT);
+    });
+  });
