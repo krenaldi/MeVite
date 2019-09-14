@@ -8,7 +8,6 @@
 var express = require('express');
 var session = require('express-session');
 var path = require('path');
-// var router = express.Router();
 
 // Requiring passport as we've configured it
 // =============================================================
@@ -33,14 +32,6 @@ app.use(express.static('./public'));
 //=============================================================
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-//Middleware to process request
-//==============================================================
-//For BodyParser
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());
 
 // For Passport
 //==============================================================
@@ -94,11 +85,9 @@ app.get('/', (req, res) => {
 
 
 //=============================================================
-app.get('/', function(req, res) {
- 
-    res.send('Welcome to Passport with Sequelize');
- 
-});
+// app.get('/', function(req, res) {
+//     res.send('Welcome to Passport with Sequelize');
+// });
  
 //Models
 //=============================================================
