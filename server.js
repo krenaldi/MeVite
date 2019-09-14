@@ -13,6 +13,7 @@ var db = require("./models");
 // Sets up the Express App
 // =============================================================
 var app = express();
+app.set('view engine', 'ejs');
 var PORT = process.env.PORT || 3000;
 // Static directory to be served
 app.use(express.static('./public'));
