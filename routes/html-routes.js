@@ -3,18 +3,21 @@ var path = require("path");
 //
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 //
 module.exports = function(app) {
 //
 
+// set view engine
+app.set('view engine', 'ejs');
 
-  // app.get("/", function(req, res) {
-  //   // If the user already has an account send them to the members page
-  //   // if (req.user) {
-  //   //   res.redirect("/members");
-  //   // }
-  //   res.render('signup');
-  // });
+  app.get("/", function(req, res) {
+    // If the user already has an account send them to the members page
+    // if (req.user) {
+    //   res.redirect("/members");
+    // }
+    res.render('../public/views/signup.ejs');
+  });
 //
   app.get("/login", function(req, res) {
       // If the user already has an account send them to the members page
