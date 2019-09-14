@@ -34,6 +34,48 @@ app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//Middleware to process request
+//==============================================================
+//For BodyParser
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+
+// For Passport
+//==============================================================
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+// import and add passport as an argument
+//=============================================================
+var authRoute = require('./routes/auth.js')(app,passport);
+
+passport.use(new LocalStrategy(function(username, password, done) {
+    // database.signin(username, password, done);
+    if (username === 'admin' && password === 'admin') {
+      console.log('Signin');
+      done(null, { username: username });
+    } else {
+      done(null, false);
+    }
+  }));
+  
+  app.post('/signin', passport.authenticate('local', {
+    successRedirect: '/accessed',
+    failureRedirect: '/access'
+  }));
+
+  passport.serializeUser(function(user, done) {
+    done(null, user);
+  });
+  
+  passport.deserializeUser(function(user, done) {
+    done(null, user);
+  });
+
+
 // express-session
 // We need to use sessions to keep track of our user's login status
 //=============================================================
@@ -50,6 +92,21 @@ app.get('/', (req, res) => {
 });
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+
+//=============================================================
+app.get('/', function(req, res) {
+ 
+    res.send('Welcome to Passport with Sequelize');
+ 
+});
+ 
+//Models
+//=============================================================
+var models = require("./models"); 
+
+//load passport strategies
+//=============================================================
+require('./passport/passport.js')(passport, models.user);
 
 // Routes
 // Requiring our routes
