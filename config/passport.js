@@ -1,8 +1,8 @@
 //we import passport packages required for authentication
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
-var GoogleStrategy = require('passport-google-oauth20');
-var keys = require('./keys.js');
+// var GoogleStrategy = require('passport-google-oauth20');
+// var keys = require('./keys.js');
 //
 //We will need the models folder to check passport agains
 var db = require("../models");
@@ -39,18 +39,18 @@ passport.use(new LocalStrategy(
   }
 ));
 // Used to login in with Google
-passport.use(new GoogleStrategy({
-  // options for google strategy
-  callbackURL: '/auth/google/redirect',
-  clientID: keys.google.clientID,
-  clientSecret: keys.google.clientSecret
-}, (accessToken, refreshToken, profile, done) => {
-  // passport callback function
-  console.log(profile);
-  db.User.findOrCreate({ googleId: profile.id }, function (err, user) {
-      return done(err, user);
-  });
-}));
+// passport.use(new GoogleStrategy({
+//   // options for google strategy
+//   callbackURL: '/auth/google/redirect',
+//   clientID: keys.google.clientID,
+//   clientSecret: keys.google.clientSecret
+// }, (accessToken, refreshToken, profile, done) => {
+//   // passport callback function
+//   console.log(profile);
+//   db.User.findOrCreate({ googleId: profile.id }, function (err, user) {
+//       return done(err, user);
+//   });
+// }));
 
 
 // In order to help keep authentication state across HTTP requests,

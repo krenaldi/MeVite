@@ -3,7 +3,7 @@
 var express = require('express');
 var session = require('express-session');
 var path = require('path');
-const authRoutes = require('./routes/auth-routes.js');
+//var authRoutes = require('./routes/auth-routes.js');
 // var router = express.Router();
 // Requiring passport as we've configured it
 // =============================================================
@@ -35,7 +35,7 @@ app.use(passport.session());
 // =============================================================
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
-require("./routes/auth-routes.js")(app);
+//require("./routes/auth-routes.js")(app);
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function () {
  app.listen(PORT, function () {
