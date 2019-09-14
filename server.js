@@ -13,7 +13,7 @@ var path = require('path');
 
 // Requiring passport as we've configured it
 // =============================================================
-var passport = require("./config/passport");
+var passportSetup = require("./config/passport.js");
 
 //Import the models folder
 // =============================================================
@@ -64,6 +64,6 @@ require("./routes/api-routes.js")(app);
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
-      console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+      console.log('Server listening on: http://localhost:' + PORT);
     });
   });

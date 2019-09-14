@@ -4,7 +4,8 @@
   "description": "An app that allows users to schedule and invite people to events",
   "main": "index.js",
   "scripts": {
-    "test": "node server.js"
+    "test": "node server.js",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -31,8 +32,5 @@
     "path": "^0.12.7",
     "sequelize": "^5.18.4",
     "sequelize-cli": "^5.5.1"
-  },
-  "devDependencies": {
-    "nodemon": "^1.19.2"
   }
 }
