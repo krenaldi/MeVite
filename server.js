@@ -7,21 +7,11 @@
 // =============================================================
 var express = require('express');
 var session = require('express-session');
-var bodyParser = require('body-parser');
 var path = require('path');
-<<<<<<< HEAD
-var router = express.Router();
-// var env = require('dotenv').config({path: __dirname + '/.env'});
-var passport   = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-
-=======
-// var router = express.Router();
->>>>>>> master
 
 // Requiring passport as we've configured it
 // =============================================================
-var passportSetup = require("./config/passport.js");
+var passport = require("./config/passport.js");
 
 //Import the models folder
 // =============================================================
@@ -42,14 +32,6 @@ app.use(express.static('./public'));
 //=============================================================
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-//Middleware to process request
-//==============================================================
-//For BodyParser
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());
 
 // For Passport
 //==============================================================
@@ -95,18 +77,17 @@ app.use(passport.session());
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // //we are doing a GET to test if our server is working fine
 // //=============================================================
-// app.get('/', function(req, res) {    
-// 	res.send('./public/home.html');
-// });
+// create home route
+app.get('/', (req, res) => {
+  res.render('signup');
+});
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 //=============================================================
-app.get('/', function(req, res) {
- 
-    res.send('Welcome to Passport with Sequelize');
- 
-});
+// app.get('/', function(req, res) {
+//     res.send('Welcome to Passport with Sequelize');
+// });
  
 //Models
 //=============================================================
@@ -119,21 +100,8 @@ require('./passport/passport.js')(passport, models.user);
 // Routes
 // Requiring our routes
 // =============================================================
-<<<<<<< HEAD
-require("./routes/api_routes.js")(app);
-var authRoute = require('./routes/auth.js')(app, passport);
-
-//Sync Database
-// =============================================================
-models.sequelize.sync().then(function() {
-    console.log('Nice! Database looks fine')
-}).catch(function(err) {
-    console.log(err, "Something went wrong with the Database Update!")
-});
-=======
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
->>>>>>> master
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
