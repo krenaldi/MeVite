@@ -42,4 +42,5 @@ User.beforeCreate(user => {
       null
     );
   });
+  return User;
 };
