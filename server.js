@@ -7,13 +7,12 @@
 // =============================================================
 var express = require('express');
 var session = require('express-session');
-var bodyParser = require('body-parser');
 var path = require('path');
 // var router = express.Router();
 
 // Requiring passport as we've configured it
 // =============================================================
-var passportSetup = require("./config/passport.js");
+var passport = require("./config/passport.js");
 
 //Import the models folder
 // =============================================================
@@ -35,10 +34,6 @@ app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//Middleware to process request
-//==============================================================
-app.use(bodyParser.urlencoded({extended: false}));
-
 // express-session
 // We need to use sessions to keep track of our user's login status
 //=============================================================
@@ -49,9 +44,10 @@ app.use(passport.session());
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // //we are doing a GET to test if our server is working fine
 // //=============================================================
-// app.get('/', function(req, res) {    
-// 	res.send('./public/home.html');
-// });
+// create home route
+app.get('/', (req, res) => {
+  res.render('signup');
+});
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
