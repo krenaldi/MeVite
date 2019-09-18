@@ -37,4 +37,12 @@ app.set('view engine', 'ejs');
     app.get("/members", isAuthenticated, function(req, res) {
       res.render('../public/views/members');
     });
+    
+    app.get("/createEvents", isAuthenticated, function(req, res) {
+      res.render('../public/views/createEvents');
+    });
+
+    app.get("/contacts", isAuthenticated, function(req, res) {
+      res.render('../public/views/contacts');
+    });
   };
