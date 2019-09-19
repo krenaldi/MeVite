@@ -2,3 +2,131 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+.animation_container {
+  padding: 20px 20px 10px 20px;
+  background-color: #f2f1f1;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+html { 
+  background: url("../images/home.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#envelope {
+  margin-left: 70px;
+}
+
+.navbar {
+  background-color: #003A6F !important;
+}
+
+.navbar .navbar-brand {
+  color: white;
+}
+
+.navbar .navbar-nav li a {
+  color: white !important;
+}
+
+.navbar .navbar-nav li a:hover {
+  color: #ffc56e !important;
+}
+
+.nav-item-active {
+ color: aqua;
+}
+
+.login-button {
+  background-color: #ff5959;
+  color: white;
+  border-color: #aa3939;
+}
+
+.login-button:hover {
+  background-color: #f94949 !important;
+  color: #f2f1f1;
+  border-color: #ff5959;
+  outline: none;
+}
+
+button:focus {
+ outline:0;
+}
+
+.login-form {
+  background-color: #f2f1f1;
+  padding: 30px 50px 50px 50px;
+  margin: 50px;
+  width: 40%;
+  float: right;
+  border-radius: 10px;
+}
+
+label {
+  color: gray;
+}
+
+.fixed-bottom {
+  background-color: #003A6F;
+  color: #f2f1f1;
+  padding: 5px;
+  text-align: center;
+}
+
+.signup-form {
+  background-color: #f2f1f1;
+  padding: 30px 50px 50px 50px;
+  margin: 50px;
+  width: 40%;
+  float: right;
+  border-radius: 10px;
+}
+
+.contact-image {
+  background-color: #f2f1f1;
+  padding: 20px 50px 0px 50px;
+  margin: 0 auto;
+  width: 40%;
+  border-radius: 10px;
+}
+
+.event-image {
+  background-color: #f2f1f1;
+  padding: 20px 50px 0px 50px;
+  margin: 0 auto;
+  width: 40%;
+  border-radius: 10px;
+}
+
+body {
+  background: url("../images/home.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.welcome {
+  margin: 30px;
+  border-radius: 10px;
+  background-color: #f2f1f1;
+}
+
+.event-contact {
+  color: #003A6F;
+}
+
+.bigger {
+  width: 90%;
+}
+#color {
+  color: #ff5959;
+}
+
