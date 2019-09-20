@@ -16,11 +16,11 @@ app.set('view engine', 'ejs');
     if (req.user) {
       res.redirect("../public/views/members");
     }
-    res.render('../public/views/signup');
+    res.render('../public/views/login');
   });
 
   app.get("/signup", function (req, res){
-    res.render("../public/views/login");
+    res.render("../public/views/signup");
   });
 //
   app.get("/login", function(req, res) {
