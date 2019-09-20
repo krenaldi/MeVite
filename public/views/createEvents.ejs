@@ -6,23 +6,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    .btn {
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 10px;
-
+    .date,
+    .time,
+    .city,
+    .state,
+    .zip,
+    .country {
+      display: inline-block;
+      padding-right: 10px;
     }
-
-    .google-btn {
-      background: #ff5353;
-    }
+  .date {
+    width: 38%;
+  } 
+  .time {
+    width: 25%;
+  } 
+  .city {
+    width:37%;
+  }
+  .state {
+    width:10%;
+  }
+  .zip {
+    width:15%;
+  }
+  .country {
+    width: 36%;
+  } 
   </style>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link href="../css/style.css" rel="stylesheet">
@@ -73,59 +88,119 @@
         <input type="text" class="form-control" id="title" placeholder="Title">
       </div>
       <div class="form-group">
-        <label>Date</label>
-        <input type="Date" class="form-control" id="date" placeholder="Date">
+        <div class="date">
+          <label>Date</label>
+          <input type="Date" class="form-control" id="date" placeholder="Date">
+        </div>
+        <div class="time">
+          <label>Time</label>
+          <input type="Time" class="form-control" id="time" placeholder="MM/DD/YYYY">
+        </div>
       </div>
-      <div class="form-group">
-        <label>Time</label>
-        <input type="Time" class="form-control" id="time" placeholder="MM/DD/YYYY">
-      </div>
+      
       <div class="form-group">
         <label>Address</label>
         <input type="text" class="form-control" id="address" placeholder="Street">
       </div>
       <div class="form-group">
+      <div class="city">
         <label>City</label>
         <input type="text" class="form-control" id="city" placeholder="City">
       </div>
-      <div class="form-group">
+      <div class="state">
         <label>State</label>
-        <input type="text" class="form-control" id="state" placeholder="State">
+        <select id="state" class="form-control">
+          <option>State</option>
+          <option value="AL">AL</option>
+          <option value="AK">AK</option>
+          <option value="AR">AR</option>
+          <option value="AZ">AZ</option>
+          <option value="CA">CA</option>
+          <option value="CO">CO</option>
+          <option value="CT">CT</option>
+          <option value="DC">DC</option>
+          <option value="DE">DE</option>
+          <option value="FL">FL</option>
+          <option value="GA">GA</option>
+          <option value="HI">HI</option>
+          <option value="IA">IA</option>
+          <option value="ID">ID</option>
+          <option value="IL">IL</option>
+          <option value="IN">IN</option>
+          <option value="KS">KS</option>
+          <option value="KY">KY</option>
+          <option value="LA">LA</option>
+          <option value="MA">MA</option>
+          <option value="MD">MD</option>
+          <option value="ME">ME</option>
+          <option value="MI">MI</option>
+          <option value="MN">MN</option>
+          <option value="MO">MO</option>
+          <option value="MS">MS</option>
+          <option value="MT">MT</option>
+          <option value="NC">NC</option>
+          <option value="NE">NE</option>
+          <option value="NH">NH</option>
+          <option value="NJ">NJ</option>
+          <option value="NM">NM</option>
+          <option value="NV">NV</option>
+          <option value="NY">NY</option>
+          <option value="ND">ND</option>
+          <option value="OH">OH</option>
+          <option value="OK">OK</option>
+          <option value="OR">OR</option>
+          <option value="PA">PA</option>
+          <option value="RI">RI</option>
+          <option value="SC">SC</option>
+          <option value="SD">SD</option>
+          <option value="TN">TN</option>
+          <option value="TX">TX</option>
+          <option value="UT">UT</option>
+          <option value="VT">VT</option>
+          <option value="VA">VA</option>
+          <option value="WA">WA</option>
+          <option value="WI">WI</option>
+          <option value="WV">WV</option>
+          <option value="WY">WY</option>
+        </select>
       </div>
-      <div class="form-group">
+      <div class="zip">
         <label>Zip Code</label>
-        <input type="number" class="form-control" id="zipcode" placeholder="Zip Code">
+        <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">
       </div>
-      <div class="form-group">
+      <div class="country">
         <label>Country</label>
         <input type="text" class="form-control" id="country" placeholder="Country">
       </div>
+    </div>
+      </form>
+      
       <button type="submit" class="btn btn-default login-button">Create</button>
     </form>
   </div>
-</div>
-</div>
-</div>
-<br>
-<hr>
-<br>
-<div class="container welcome">
-  <form class="eventHistory">
-    <div class="form-group">
-      <label>Events</label>
-      <div>
-        <p>Title/Details</p>
+  </div>
+  </div>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div class="container welcome">
+    <form class="eventHistory">
+      <div class="form-group">
+        <label>Events</label>
+        <div>
+          <p>Title/Details</p>
+        </div>
+        <br>
+        <button class="btn btn-default login-button">Edit</button>
+        <button class="btn btn-default login-button">Delete</button>
       </div>
-      <br>
-      <button class="btn btn-default login-button">Edit</button>
-      <button class="btn btn-default login-button">Delete</button>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
 
-<div class="fixed-bottom">
-  <span>Copyright 2019 ©</span>
-</div>
+  <div class="fixed-bottom">
+    <span>Copyright 2019 ©</span>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -135,3 +210,15 @@
 </body>
 
 </html>
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
