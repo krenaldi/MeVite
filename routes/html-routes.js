@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("../public/views/members");
+      res.redirect("../public/views/login");
     }
     res.render('../public/views/login');
   });
@@ -22,12 +22,13 @@ app.set('view engine', 'ejs');
   app.get("/signup", function (req, res){
     res.render("../public/views/signup");
   });
+
 //
   app.get("/login", function(req, res) {
       // If the user already has an account send them to the members page
-    if (req.user) {
-        res.redirect("../public/views/members");
-      }
+    // if (req.user) {
+    //     res.redirect("../public/views/members");
+    //   }
       res.render('../public/views/login');
     });
   //
