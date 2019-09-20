@@ -23,7 +23,8 @@ module.exports = (app) => {
         country: req.body.country
 
       }).then(function() {
-        res.send("/contacts");
+        // res.send("/contacts");
+        console.log("cool");
       }).catch(function(err) {
         console.log(err);
         res.json(err);
