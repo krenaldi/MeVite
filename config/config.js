@@ -1,11 +1,10 @@
-{
+module.exports = {
   "development": {
     "username": "root",
     "password": "rootpass",
     "database": "mevite",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql",
-    "port": 3306
   },
   "test": {
     "username": "root",
@@ -13,14 +12,9 @@
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": 3306
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql",
-    "port": 3306
   }
 }
