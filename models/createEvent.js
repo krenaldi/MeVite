@@ -34,6 +34,13 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
           }
       }
-    );  
+    ); 
+    CreateEvent.associate = function(models){
+      CreateEvent.belongsTo(models.User);
+      CreateEvent.hasMany(models.contacts, { 
+        as: 'contacts'
+      })
+  
+    }
     return CreateEvent;
   }

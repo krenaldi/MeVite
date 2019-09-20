@@ -2,14 +2,11 @@
 module.exports = (sequelize, DataTypes) => {
 
     var Contacts = sequelize.define('contacts', {
-      userName: {
-        type: DataTypes.STRING,
-        allowNull: false
-      }, name: {
+      contactName: {
         type: DataTypes.STRING,
         allowNull: false
       },
-      email: {
+      contactEmail: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
@@ -17,15 +14,15 @@ module.exports = (sequelize, DataTypes) => {
           isEmail: true
         }
       },
-        number: {
-          type: DataTypes.INTEGER,
+      contactPhone: {
+          type: DataTypes.STRING,
           allowNull: false,
-          unique: true,
-          validate: {
-            isNumber: true
-          }
+          unique: true
         }
     }
     );
+    Contacts.associate = function(models){
+      // Contacts.belongsToMany(models.createEvent, { through: "event_contact" });
+    }
     return Contacts;
   }
