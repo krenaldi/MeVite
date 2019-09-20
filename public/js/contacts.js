@@ -36,4 +36,6 @@ $(document).ready(function () {
       $("#alert").fadeIn(500);
     }
   });
-  
+  function updateContact(userData){
+    $.put()
+  }

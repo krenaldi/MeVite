@@ -14,7 +14,7 @@ module.exports = (app) => {
         contactName: req.body.contactName, ///// 
         contactEmail: req.body.contactEmail,
         contactPhone: req.body.contactPhone
-      }).then( (result) => res.json(result) )
+      }).then( (result) => res.send("/contacts") )
     );
   
     app.put( "/contacts/:contactName", (req, res) =>
@@ -27,7 +27,7 @@ module.exports = (app) => {
         where: {
           contactName: req.body.contactName
         }
-      }).then( (result) => res.json(result) )
+      }).then( (result) => res.render("/contacts") )
     );
   
     app.delete( "/contacts/:contactName", (req, res) =>
