@@ -1,8 +1,8 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
-var passport = require("../config/passport");
+// var passport = require("../config/passport");
 
-module.exports = (app, db) => {
+module.exports = (app) => {
     app.get( "/createEvent", (req, res) =>
       db.createEvent.findAll().then( (result) => res.json(result) )
     );
@@ -22,7 +22,13 @@ module.exports = (app, db) => {
         zipcode: req.body.zipcode,
         country: req.body.country
 
-      }).then( (result) => res.json(result) )
+      }).then(function() {
+        res.send("/contacts");
+      }).catch(function(err) {
+        console.log(err);
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      })   
     );
   
     app.put( "/createEvent/:title", (req, res) =>
