@@ -29,23 +29,77 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
+  <!-- Top Animation Logo -->
+  <div class="animation_container">
+    <div>
+      <a href="login" class="logo">
+        <img class="animated fadeInRight" class="d-inline-block align-top" src="../images/mevitelogo.gif"
+          alt="mevite logo" height="30px">
+      </a>
+
+      <a href="login">
+        <img id="envelope" src="../images/envelope.gif" alt="envelope" height="50px">
       </a>
     </div>
   </div>
-</nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-      </div>
+
+  <!-- NavBar -->
+
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/members">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/createEvents">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacts">Contacts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+      </ul>
     </div>
+  </nav>
+
+  <div class="jumbotron welcome">
+    <h1 class="display-4">Welcome <span class="member-name"></span> to mevite!!!</h1>
+    <p class="lead">Feel free to click on the links below to get your mevites sent out Today!</p>
+    <hr class="my-4">
+    <p><strong id="color">mevite</strong>, the way to put your party together!</p>
+    <a class="btn btn-primary btn-lg login-button" href="#" role="button">Learn more</a>
   </div>
 
+
+
+  <div class="container">
+    <div class="row bigger">
+      <div class="col-lg-5 event-image">
+        <a class="nav-link" href="/createEvents">
+          <img src="../images/mail.jpeg" class="img-fluid" alt="Responsive image">
+          <h2 class="event-contact"> Make an event</h2>
+        </a>
+      </div>
+      <div class="col-lg-5 contact-image">
+        <a class="nav-link" href="/contacts">
+          <img src="../images/friends.jpeg" class="img-fluid" alt="Responsive image">
+          <h2 class="event-contact"> Look through your mevite Contacts</h2>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="fixed-bottom">
+    <span>Copyright 2019 ©</span>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="../js/members.js"></script>
 
