@@ -25,6 +25,7 @@ html {
 
 .navbar {
   background-color: #003A6F !important;
+  border-radius: 0px;
 }
 
 .navbar .navbar-brand {
