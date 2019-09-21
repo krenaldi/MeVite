@@ -61,6 +61,6 @@ typings/
 .next
 .DS_Store
 .sequelizerc
-config.js
-config.json
-index.js
+config/config.js
+config/config.json
+models/index.js
