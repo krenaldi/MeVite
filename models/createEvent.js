@@ -1,3 +1,6 @@
+var db = require("./user.js");
+var db = require("./contacts.js")
+
 module.exports = (sequelize, DataTypes) => {
     
     var CreateEvent = sequelize.define('createEvent', {
@@ -37,10 +40,9 @@ module.exports = (sequelize, DataTypes) => {
     ); 
     CreateEvent.associate = function(models){
       CreateEvent.belongsTo(models.User);
-      CreateEvent.hasMany(models.contacts, { 
-        as: 'contacts'
-      })
-  
+      // CreateEvent.hasMany(models.contacts, { 
+      //   as: 'contacts'
+      // })
     }
     return CreateEvent;
   }
