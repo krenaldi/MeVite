@@ -64,3 +64,5 @@ typings/
 config/config.js
 config/config.json
 models/index.js
+package.json
+
