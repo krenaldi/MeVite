@@ -24,8 +24,6 @@ html {
   margin-left: 70px;
 }
 
-
-
 .navbar {
   background-color: #003A6F;
   border-radius: 0px;
@@ -41,10 +39,6 @@ html {
 
 .navbar .navbar-nav li a:hover {
   color: #ffc56e;
-}
-
-.sr-only{
-  color: #f94949;
 }
 
 .login-button {
@@ -64,9 +58,10 @@ button:focus {
  outline:0;
 }
 
-.login-form {
+.login-form,
+.signup-form {
   background-color: #f2f1f1;
-  padding: 30px 50px 50px 50px;
+  padding: 10px 50px 40px 50px;
   margin: 50px;
   width: 40%;
   float: right;
@@ -82,15 +77,6 @@ label {
   color: #f2f1f1;
   padding: 5px;
   text-align: center;
-}
-
-.signup-form {
-  background-color: #f2f1f1;
-  padding: 30px 50px 50px 50px;
-  margin: 50px;
-  width: 40%;
-  float: right;
-  border-radius: 10px;
 }
 
 .contact-image {
@@ -161,3 +147,34 @@ body {
 .btn {
   text-transform: lowercase;
 }
+
+h2 {
+  color: #808080;
+  color: #ff5959;
+  font-family: 'Lobster', cursive;
+  font-style: none;
+  text-transform: lowercase;
+}
+
+.form-control {
+  color: #808080;
+}
+
+.container.welcome {
+  background-color: #f2f1f1;
+  padding: 10px 50px 40px 50px;
+  margin: 50px 25px 50px 50px;
+  width: 40%;
+  float: left;
+  border-radius: 10px;
+}
+
+  .jumbotron.welcome {
+    background-color: #f2f1f1;
+    padding: 10px 50px 40px 50px;
+    margin: 50px 50px 50px 25px;
+    width: 40%;
+    float: right;
+    border-radius: 10px;
+  }
+  
