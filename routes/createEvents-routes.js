@@ -20,7 +20,8 @@ module.exports = (app) => {
         city: req.body.city,
         state: req.body.state,
         zipcode: req.body.zipcode,
-        country: req.body.country
+        country: req.body.country,
+        UserId : req.body.UserId
 
       }).then(function() {
         // res.send("/contacts");
