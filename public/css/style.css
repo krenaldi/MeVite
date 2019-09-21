@@ -79,22 +79,6 @@ label {
   text-align: center;
 }
 
-.contact-image {
-  background-color: #f2f1f1;
-  padding: 20px 50px 0px 50px;
-  margin: 0 auto;
-  width: 40%;
-  border-radius: 10px;
-}
-
-.event-image {
-  background-color: #f2f1f1;
-  padding: 20px 50px 0px 50px;
-  margin: 0 auto;
-  width: 40%;
-  border-radius: 10px;
-}
-
 body {
   background: url("../images/home.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -169,12 +153,29 @@ h2 {
   border-radius: 10px;
 }
 
-  .jumbotron.welcome {
-    background-color: #f2f1f1;
-    padding: 10px 50px 40px 50px;
-    margin: 50px 50px 50px 25px;
-    width: 40%;
-    float: right;
-    border-radius: 10px;
-  }
+.jumbotron.welcome {
+  background-color: #f2f1f1;
+  padding: 10px 50px 40px 50px;
+  margin: 50px 50px 50px 25px;
+  width: 40%;
+  float: right;
+  border-radius: 10px;
+}
   
+.contact-image {
+  background-color: #f2f1f1;
+  padding: 20px 50px 0px 50px;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 40%;
+  border-radius: 10px;
+}
+
+.event-image {
+  background-color: #f2f1f1;
+  padding: 20px 50px 0px 50px;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 40%;
+  border-radius: 10px;
+}
