@@ -22,6 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     }
     );
     Contacts.associate = function(models){
+      Contacts.belongsTo(models.User);
+      
       // Contacts.belongsToMany(models.createEvent, { through: "event_contact" });
     }
     return Contacts;
