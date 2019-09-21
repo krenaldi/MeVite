@@ -11,4 +11,4 @@ A website where users register or login to create events that they can invite ot
 6. The user will then be able to refer back to this event page after they login and be able to keep track of who's coming and how many people are coming.
 
 ## App diagram
-[![MeVite App Diagram](/MeVite DB diagram.png)]
+[![MeVite App Diagram](MeVite DB diagram.png)]
