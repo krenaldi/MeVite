@@ -51,7 +51,8 @@
                     <a class="nav-link" href="/createEvents">Events</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contacts" style="color: #FFC56C">Contacts<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/contacts" style="color: #FFC56C">Contacts<span
+                            class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
@@ -61,7 +62,7 @@
     </nav>
 
     <div class="jumbotron welcome">
-        <h2>Contacts</h2>
+        <h2>+ Member to Contact List</h2>
         <form class="addContacts">
             <div class="form-group">
                 <label>Name</label>
@@ -73,18 +74,18 @@
             </div>
             <div class="form-group">
                 <label>Phone Number</label>
-                <input type="text" id="contactPhone" name="phone">
+                <input type="text" class="form-control" id="contactPhone" name="phone">
             </div>
-            <button type="submit" class="btn btn-default login-button">Add</button>
+            <button type="submit" class="btn btn-default login-button">+</button>
         </form>
     </div>
 
     <div class="container welcome">
         <form class="eventHistory">
             <div class="form-contact">
-                <h2>Contact Members</h2>
+                <h2>Contact List</h2>
                 <div>
-                    <p>Contact Name / Details</p>
+                    <!-- <p style="color: #808080">Contact Name / Details</p> -->
                     <h4 class="contact-name"></h4>
                     <div class="contact-email"></div>
                     <div class="contact-number"></div>
