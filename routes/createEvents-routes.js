@@ -32,7 +32,7 @@ module.exports = (app) => {
       })   
     );
   
-    app.put( "/createEvent/:title", (req, res) =>
+    app.put( "/createEvent/:id", (req, res) =>
       db.createEvent.update({
         title: req.body.title,
         date: req.body.date,
@@ -45,15 +45,15 @@ module.exports = (app) => {
       },
       {
         where: {
-            title: req.body.title
+            id: req.params.id
         }
       }).then( (result) => res.json(result) )
     );
   
-    app.delete( "/createEvent/:title", (req, res) =>
+    app.delete( "/createEvent/:id", (req, res) =>
       db.createEvent.destroy({
         where: {
-            title: req.body.title
+            id: req.params.id
         }
       }).then( (result) => res.json(result) )
     );

@@ -1,23 +1,30 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 module.exports = (app) => {
-    app.get( "/contacts", (req, res) =>
+    app.get( "/contactz", (req, res) =>
       db.contacts.findAll().then( (result) => res.json(result) )
     );
   
-    app.get( "/contacts/:contactName", (req, res) =>
-      db.contacts.findByContactName(req.params.contactName).then( (result) => res.json(result))
+    app.get( "/contactz/:contactName", (req, res) =>
+      db.contacts.findBycontactName(req.params.id).then( (result) => res.json(result))
     );
   
-    app.post("/contacts", (req, res) => 
+    app.post("/contactz", (req, res) => 
       db.contacts.create({
-        contactName: req.body.contactName, ///// 
+        contactName: req.body.contactName, 
         contactEmail: req.body.contactEmail,
         contactPhone: req.body.contactPhone
-      }).then( (result) => res.send("/contacts") )
+
+      }).then(function(data) {
+        console.log("cool");
+        res.json(data);
+      }).catch(function(err) {
+        console.log(err);
+        res.json(err);
+      })
     );
   
-    app.put( "/contacts/:contactName", (req, res) =>
+    app.put( "/contactz/:id", (req, res) =>
       db.contacts.update({
         contactName: req.body.contactName,
         contactEmail: req.body.contactEmail,
@@ -25,15 +32,15 @@ module.exports = (app) => {
       },
       {
         where: {
-          contactName: req.body.contactName
+          id: req.params.id
         }
-      }).then( (result) => res.render("/contacts") )
+      }).then( (result) => res.json(result) )
     );
   
-    app.delete( "/contacts/:contactName", (req, res) =>
+    app.delete( "/contactz/:id", (req, res) =>
       db.contacts.destroy({
         where: {
-          contactName: req.body.contactName
+          id: req.params.id
         }
       }).then( (result) => res.json(result) )
     );
