@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "rootpass",
-    "database": "mevite",
+    "password": "password",
+    "database": "meviteDB",
     "host": "localhost",
     "dialect": "mysql",
   },

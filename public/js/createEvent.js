@@ -13,7 +13,7 @@ $(document).ready(function () {
 
   // Trigger the create event function on submit
   createEvents.on("submit", function (event) {
-    event.preventDefault();
+    event.stopImmediatePropagation();
     var userData = {
       title: title.val().trim(),
       date: date.val().trim(),
@@ -29,6 +29,7 @@ $(document).ready(function () {
       !userData.city || !userData.state || !userData.zipcode || !userData.country) {
         return;
       }
+
       // If we have all the userData, run the createNewEvent function
       createNewEvent(userData);
   });
@@ -41,7 +42,6 @@ $(document).ready(function () {
       // If there's an error, handle it by throwing up a boostrap alert
     }).then(appendEventHistory()).catch(handleLoginErr);
   }
-
   // function to throw error alert
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
@@ -63,7 +63,7 @@ $(document).ready(function () {
           // $("#eventDetails").append(`<p>Event Name: ${data[i].updatedAt} </p>`);
           $("#eventDetails").append(`<button class="btn btn-default login-button">Edit</button>
           <button value="${data.title}" id="deleted" class="btn btn-default login-button">Delete</button>
-          <button class="btn btn-default login-button">Send Invites</button> <br>`)
+          <button class="btn btn-default login-button">Send Invites</button> <br>`);
           $("#eventDetails").append("</div>");
         }
       }else{
@@ -75,6 +75,7 @@ $(document).ready(function () {
   $("#deleted").on("click", function(event) {
     event.preventDefaultn();
     var title = $(this).value();
+
     $.delete(`/createEvent/:${title}`).then(function() {
       appendEventHistory();
     })
