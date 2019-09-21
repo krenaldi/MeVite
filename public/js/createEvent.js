@@ -23,7 +23,8 @@ $(document).ready(function () {
       city: city.val().trim(),
       state: state.val().trim(),
       zipcode: zipcode.val().trim(),
-      country: country.val().trim()
+      country: country.val().trim(),
+      UserId: userID
     };
 
     if (!userData.title || !userData.date || !userData.time || !userData.address ||
@@ -38,7 +39,7 @@ $(document).ready(function () {
   // Does a post to the createEvent route. If succesful, we are redirected to the members page otherwise we log any errors
   function createNewEvent(userData) {
     $.post("/createEvent", userData).then(function (data) {
-      console.log(data)
+      console.log(data);
       window.location.replace(data);
       // If there's an error, handle it by throwing up a boostrap alert
     }).then(appendEventHistory()).catch(handleLoginErr);

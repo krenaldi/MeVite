@@ -39,7 +39,11 @@ module.exports = (sequelize, DataTypes) => {
       }
     ); 
     CreateEvent.associate = function(models){
-      CreateEvent.belongsTo(models.User);
+      CreateEvent.belongsTo(models.User, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
       // CreateEvent.hasMany(models.contacts, { 
       //   as: 'contacts'
       // })
