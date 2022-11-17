@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "An app that allows users to schedule and invite people to events",
   "main": "index.js",
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
+  },
   "scripts": {
     "test": "node server.js",
     "start": "node server.js"

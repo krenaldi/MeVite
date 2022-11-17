@@ -7,8 +7,8 @@ A website where users register or login to create events that they can invite ot
     2.  The contacts page will have a form where the user will keep adding people they want to invite with their names, email addresses, and optional phone number. This will be saved to a seperate table called Contacts in the db along with the user id who created this list.
 3. Upon submission of the event, an email will be sent to the people who are listed on the invite including the user who created it. The email will contain the event title, date & time, and location along with the user who created the invite and a button they will click on if they want to accept, decline the invite or if they are undecided.
 4. After creation of the event in the db, a page will be generated based on the data in the event table. There will be an option to modify the event to either change the date or time or location and and add additional invitees that only the user who created the event can do. The page will display the invitees in 3 seperate columns: Decline (default if no one has replied), Accepted, Maybe.
-5. Invitees will click on the button in the email that will take them to a page that will show the event page. The page will have radio buttons next to the invitee's name if they wish to change their mind about attending. 
+5. Invitees will click on the button in the email that will take them to a page that will show the event page. The page will have radio buttons next to the invitee's name if they wish to change their mind about attending.
 6. The user will then be able to refer back to this event page after they login and be able to keep track of who's coming and how many people are coming.
 
 ## App diagram
-![MeVite App Diagram](https://github.com/krenaldi/MeVite/blob/master/MeVite%20DB%20diagram.png)
+![MeVite App Diagram](MeVite%20DB%20diagram.png)
